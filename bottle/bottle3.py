@@ -6,6 +6,6 @@ def main():
 
 @route('/echo/<thing>')
 def echo(thing):
-    return "Say hello to my little friend: %s!" % thing
+    return "Say hello to my little friend: %s" % thing
 
-run(host='localhost', port=9999)
+run(host='localhost', port=9999, debug=True, reloader=True)
