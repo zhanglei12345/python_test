@@ -17,10 +17,11 @@ print('Waiting for a client to call.')
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 server.bind(server_address)
 
-data, client = server.recvfrom(max_size)
+data, client = server.recvfrom(max_size)  #服务器会等待数据报到达，收到数据后，服务器会被唤醒并获取数据和客户端信息
+                                        #client变量包含客户端的地址和端口
 
 print('At', datetime.now(), client, 'said', data)
-server.sendto(b'Are you talking to me?', client)
-server.close()
+server.sendto(b'Are you talking to me?', client)  #发送响应
+server.close()  #关闭连接
 
 
