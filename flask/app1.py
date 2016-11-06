@@ -15,6 +15,9 @@ def signin_form():
               <p><button type="submit">Sign In</button></p>
               </form>'''
 
+#如果URL中看到一个问号(?)之后跟着一堆参数，那就是一个GET请求
+#POST会更新服务器上的数据，通常被用在HTML的表单和WEB API中
+
 @app.route('/signin', methods=['POST'])
 def signin():
     # 需要从request对象读取表单内容：
