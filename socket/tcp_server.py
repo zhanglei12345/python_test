@@ -11,7 +11,7 @@ print('Server is running...')
 def TCP(sock, addr):                                   #TCP服务器端处理逻辑
     print('Accept new connection from %s:%s.' % addr)   #接受新的连接请求
     while True:
-        data = sock.recv(1024)                         #接受其数据
+        data = sock.recv(1024)                         #接受其数据,指定最大的可接收消息长度为1024字节
         time.sleep(1)                                  #延迟
         if not data or data.decode() == 'quit':        #如果数据为空或者'quit'，则退出
             break
